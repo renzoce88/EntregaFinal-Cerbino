@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.contendorProductosP{
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.productoImagen {
+    max-width: 100%;
+    border-radius: 1rem;
+}
+
+.descripcionProducto {
+    font-size: 1.4rem;
+    padding: .5rem;
+    border-radius: 1rem;
+    margin-top: -2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .30rem;
+}
+
+.nombreProducto {
+    font-size: 1.8rem;
+}
+
+.contenedorCarrito{
+    margin-top: 50px;
+}
+
+.productoCarrito{
+    max-width: 1200px;
+    height: 50px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap:8rem;
+}
+
+.descripcionProductoCarrito{
+    display: flex;
+    gap:8rem;
+}
+
+.productoCarritoImagen{
+    width: 5%;
+}

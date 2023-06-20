@@ -54,3 +54,47 @@
 .productoCarritoImagen{
     width: 5%;
 }
+
+.contenedorCantTotal{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.contenedorBuscador{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    gap: 50px;
+}
+
+.contenedorBuscador button{
+    margin: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-color: rgba(224, 224, 224, 0);
+    border: 0;
+    background-color: rgba(240, 248, 255, 0);
+    
+}
+
+.contenedorBuscador button:hover { color: #777777; } /* CSS link hover (green) */
+
+.navCarrito{
+    display: flex;
+    align-items: center;
+    gap: 3px
+
+}
+
+.inputMedida{
+    border-color: rgb(224, 224, 224);
+    border: 0,5px solid;
+    border-radius: 8px;
+    font-size: 24px;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 1200px;
+}

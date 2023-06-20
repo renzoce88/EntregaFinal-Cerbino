@@ -45,17 +45,19 @@ const productos = [
 const contenedorProductos = document.querySelector("#contenedorProductos");
 const contenedorCarrito = document.querySelector("#contenedorCarrito");
 
+let productosCarrito = [];
+
 function cargaProductos() {
     productos.forEach(producto => {
         const div = document.createElement("div");
         div.innerHTML = `
-            <img class="productoImagen" src="${producto.imagen}" alt="${producto.titulo}">
-            <div class="descripcionProducto">
-                <h3 class="nombreProducto">${producto.titulo}</h3>
-                <p class="precioProducto">${producto.precio}</p>
-                <button id="${producto.id}" class="productoAgregar">agregar</button>
-            </div>
-        `;
+      <img class="productoImagen" src="${producto.imagen}" alt="${producto.titulo}">
+      <div class="descripcionProducto">
+          <h3 class="nombreProducto">${producto.titulo}</h3>
+          <p class="precioProducto">${producto.precio}</p>
+          <button id="${producto.id}" class="productoAgregar">agregar</button>
+      </div>
+    `;
 
         const botonAgregar = div.querySelector('.productoAgregar');
         botonAgregar.addEventListener('click', agregarAcarrito);
@@ -64,14 +66,12 @@ function cargaProductos() {
     });
 }
 
-const productosCarrito = [];
-
 function agregarAcarrito(e) {
     const id = e.currentTarget.id;
     const productoExistente = productosCarrito.find(item => item.producto.id === id);
 
     if (productoExistente) {
-        productoExistente.cantidad += 1; 
+        productoExistente.cantidad += 1;
     } else {
         const productoAgregado = {
             producto: productos.find(producto => producto.id === id),
@@ -80,33 +80,63 @@ function agregarAcarrito(e) {
         productosCarrito.push(productoAgregado);
     }
 
-    mostrarProductosCarrito();
-
-    localStorage.setItem("productosCarrito", JSON.stringify(productosCarrito));
+    cantCarrito();
+    guardarCarritoLocalStorage();
 }
 
-function mostrarProductosCarrito() {
-    contenedorCarrito.innerHTML = "";
+const cantCarrito = () => {
+    const contadorCarrito = document.querySelector("#contadorCarrito");
+    let totalProductos = 0;
 
     productosCarrito.forEach(item => {
-        const producto = item.producto;
-        const cantidad = item.cantidad;
+        totalProductos += item.cantidad;
+    });
 
-        const divProducto = document.createElement("div");
-        divProducto.classList.add("productoCarrito");
-        divProducto.innerHTML = `
-            <img class="productoCarritoImagen" src="${producto.imagen}" alt="${producto.titulo}">
-            <div class="descripcionProductoCarrito">
-                <h3 class="nombreProductoCarrito">${producto.titulo}</h3>
-                <p class="precioProductoCarrito">${producto.precio}</p>
-                <p class="cantidadProductoCarrito">Cantidad: ${cantidad}</p>
-                <p class="total">Total: ${cantidad * producto.precio}</p>
-            </div>
-        `;
+    contadorCarrito.textContent = totalProductos;
+};
 
-        contenedorCarrito.appendChild(divProducto);
+function buscarProductos() {
+    const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+    const resultados = productos.filter(producto => producto.titulo.toLowerCase().includes(searchTerm));
+    mostrarResultados(resultados);
+}
+
+function mostrarResultados(resultados) {
+    contenedorProductos.innerHTML = "";
+
+    resultados.forEach(producto => {
+        const div = document.createElement("div");
+        div.innerHTML = `
+    <img class="productoImagen" src="${producto.imagen}" alt="${producto.titulo}">
+    <div class="descripcionProducto">
+      <h3 class="nombreProducto">${producto.titulo}</h3>
+      <p class="precioProducto">${producto.precio}</p>
+      <button id="${producto.id}" class="productoAgregar">agregar</button>
+    </div>
+  `;
+
+        const botonAgregar = div.querySelector('.productoAgregar');
+        botonAgregar.addEventListener('click', agregarAcarrito);
+
+        contenedorProductos.append(div);
     });
 }
 
+function cargarCarritoDesdeLocalStorage() {
+    const carritoStorage = localStorage.getItem("productosCarrito");
+    if (carritoStorage) {
+        productosCarrito = JSON.parse(carritoStorage);
+        cantCarrito();
+    }
+}
+
+function guardarCarritoLocalStorage() {
+    localStorage.setItem("productosCarrito", JSON.stringify(productosCarrito));
+}
+
+cargarCarritoDesdeLocalStorage();
 cargaProductos();
+const searchInput = document.getElementById("searchInput");
+searchInput.addEventListener("keyup", buscarProductos);
+
 

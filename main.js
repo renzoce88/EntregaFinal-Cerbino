@@ -2,42 +2,42 @@ const productos = [
     {
         id: "zapatilla01",
         titulo: "zapatilla 01",
-        imagen: "./img/zapatilla01.jpg",
+        imagen: "./Img/zapatilla01.jpg",
         precio: 25000,
     },
 
     {
         id: "zapatilla02",
         titulo: "zapatilla 02",
-        imagen: "./img/zapatilla02.jpg",
+        imagen: "./Img/zapatilla02.jpg",
         precio: 65000,
     },
 
     {
         id: "zapatilla03",
         titulo: "zapatilla 03",
-        imagen: "./img/zapatilla03.jpg",
+        imagen: "./Img/zapatilla03.jpg",
         precio: 35000,
     },
 
     {
         id: "zapatilla04",
         titulo: "zapatilla 04",
-        imagen: "./img/zapatilla04.jpg",
+        imagen: "./Img/zapatilla04.jpg",
         precio: 55000,
     },
 
     {
         id: "zapatilla05",
         titulo: "zapatilla 05",
-        imagen: "./img/zapatilla05.jpg",
+        imagen: "./Img/zapatilla05.jpg",
         precio: 21000,
     },
 
     {
         id: "zapatilla06",
         titulo: "zapatilla 06",
-        imagen: "./img/zapatilla06.jpg",
+        imagen: "./Img/zapatilla06.jpg",
         precio: 45000,
     },
 ]

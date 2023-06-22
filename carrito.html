@@ -10,11 +10,11 @@
 </head>
 
 <body>
-    <nav><a href="./index.html"><p>volver</p></a></nav>
+    <nav class="barraNav"><a href="index.html">VOLVER</a></nav>
     <div class="contenedorBuscador">
-        <input class="inputMedida" type="text" id="searchInput" placeholder="Buscar productos">
+        <h1>Productos en carrito</h1>
         <div id="callCarrito" class="navCarrito">
-            <a href="./carrito.html">
+            <a class="nav1Carrito"  href="./carrito.html">
 
             <button id="pestañaCarrito"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256">
                     <path fill="currentColor"
@@ -26,6 +26,7 @@
     <div id="contenedorCarrito" class="contenedorCarrito"></div>
 
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./carrito.js"></script>
 </body>
 </html>

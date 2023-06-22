@@ -88,6 +88,11 @@
 
 }
 
+.nav1Carrito{
+    display: flex;
+    align-items: center;
+}
+
 .inputMedida{
     border-color: rgb(224, 224, 224);
     border: 0,5px solid;
@@ -97,4 +102,29 @@
     padding-top: 15px;
     padding-bottom: 15px;
     width: 1200px;
+}
+
+.separador{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-top: 150px;
+}
+
+footer{
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 150px;
+}
+
+.barraNav{
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 25px;
+}
+
+a{
+    text-decoration: none;
 }

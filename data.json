@@ -1,0 +1,20 @@
+[
+    {
+        "nombre": "Proximamente",
+        "precio": 111500,
+        "id": 1,
+        "imagen": "./img/zapatilla07.jpg"
+    },
+    {
+        "nombre": "Proximamente",
+        "precio": 99000,
+        "id": 2,
+        "imagen": "./img/zapatilla08.jpg"
+    },
+    {
+        "nombre": "Proximamente",
+        "precio": 83500,
+        "id": 3,
+        "imagen": "./img/zapatilla09.jpg"
+    }
+]

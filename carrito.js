@@ -64,11 +64,9 @@ function restarCantidad(index) {
     productosEnCarrito[index].cantidad--;
 
     if (productosEnCarrito[index].cantidad === 0) {
-        // Eliminar el producto si la cantidad llega a 0
         productosEnCarrito.splice(index, 1);
         contenedorCarrito.removeChild(contenedorCarrito.children[index]);
     } else {
-        // Actualizar la cantidad y el total en el carrito
         const cantidadProductoCarrito = contenedorCarrito.children[index].querySelector(".cantidadProductoCarrito");
         const totalProductoCarrito = contenedorCarrito.children[index].querySelector(".total");
 
